@@ -2917,7 +2917,8 @@ void gibbstests(int weightmode){
       init_state();
       for(i=0;i<nn;i++){
         tree1gibbs_slow(randint(2),randint(2),randint(N),beta);
-        v=val();assert(isfinite(v));
+        v=val();
+        assert(isfinite((double)v));
         s0[i]+=1;s1[i]+=v;s2[i]+=v*v;
       }
     }
